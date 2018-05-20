@@ -19,9 +19,9 @@
   "reactClassCompoment": {
     "prefix": "rcc",
     "body": [
-      "import React, { Component } from 'react'",
+      "import React, { Component } from 'react';",
       "",
-      "export default class ${1:componentName} extends Component {",
+      "export default class ${1:componentName} extends Component<any> {",
       "    render() {",
       "        return (",
       "            <${2:div}>",
@@ -33,6 +33,28 @@
       ""
     ],
     "description": "Creates a React component class with ES7 module system"
+  },
+
+  "typedReactClassCompoment": {
+    "prefix": "trcc",
+    "body": [
+      "import React, { Component } from 'react';",
+      "",
+      "interface ${1:componentName}Props {",
+      "    ${2}",
+      "}",
+      "export default class ${1:componentName} extends Component<${1:componentName}Props> {",
+      "    render() {",
+      "        return (",
+      "            <${3:div}>",
+      "                $0",
+      "            </${3:div}>",
+      "        )",
+      "    }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React component class with prop type definition"
   },
 
   "exportDefault": {
@@ -89,7 +111,7 @@
   },
   "setInterval": {
     "prefix": "sti",
-    "body": ["setInterval(() => {", "    ${2}", "}, ${0:intervalInms})", ""],
+    "body": ["setInterval(() => {", "    ${2}", "}, ${0:intervalInms});", ""],
     "description": "Executes the given function at specified intervals in ES7 syntax"
   },
   "setTimeOut": {
