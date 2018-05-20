@@ -15,6 +15,10 @@
     "categories": [
         "Snippets"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Audentio/vscode-javascript-snippets"
+    },
     "contributes": {
         "snippets": [
             {
