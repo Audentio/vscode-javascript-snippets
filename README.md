@@ -27,6 +27,7 @@
 
 |    Prefix | Method                                                                              |
 | --------: | ----------------------------------------------------------------------------------- |
+|    `rcc→` | `basic react component file. imports and default class export`                      |
 |    `imr→` | `import React from 'react'`                                                         |
 |   `imrc→` | `import React, { Component } from 'react'`                                          |
 |    `cwm→` | `componentWillMount() { }`                                                          |
