@@ -1,0 +1,165 @@
+{
+  "import": {
+    "prefix": "imp",
+    "body": "import ${2:moduleName} from '${1:module}';$0"
+  },
+  "importDestructing": {
+    "prefix": "imd",
+    "body": "import { $2 } from '${1:module}';$0"
+  },
+  "importEverything": {
+    "prefix": "ime",
+    "body": "import * as ${2:alias} from '${1:module}';$0"
+  },
+  "importAs": {
+    "prefix": "ima",
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}';$0"
+  },
+
+  "reactClassCompoment": {
+    "prefix": "rcc",
+    "body": [
+      "import React, { Component } from 'react'",
+      "",
+      "export default class ${1:componentName} extends Component {",
+      "    render() {",
+      "        return (",
+      "            <${2:div}>",
+      "                $0",
+      "            </${2:div}>",
+      "        )",
+      "    }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React component class with ES7 module system"
+  },
+
+  "exportDefault": {
+    "prefix": "exp",
+    "body": "export default $1;$0"
+  },
+  "exportDestructing": {
+    "prefix": "exd",
+    "body": "export { $2 } from '${1:module}';$0"
+  },
+  "exportAs": {
+    "prefix": "exa",
+    "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}';$0"
+  },
+
+  "method": {
+    "prefix": "met",
+    "body": ["${1:methodName} = (${2:params}) => {", "    ${0}", "}", ""],
+    "description": "Creates a method inside a class in ES7 syntax"
+  },
+  
+  "forEach": {
+    "prefix": "fre",
+    "body": ["${1:array}.forEach(${2:currentItem} => {", "    ${0}", "});", ""],
+    "description": "Creates a forEach statement in ES7 syntax"
+  },
+  "forOf": {
+    "prefix": "fof",
+    "body": ["for(let ${1:item} of ${2:object}) {", "    ${0}", "}", ""],
+    "description": "Iterating over property names of iterable objects"
+  },
+  "forIn": {
+    "prefix": "fin",
+    "body": ["for(let ${1:item} in ${2:object}) {", "    ${0}", "}", ""],
+    "description": "Iterating over property values of iterable objects"
+  },
+  
+  "namedFunction": {
+    "prefix": "nfn",
+    "body": ["const ${1:name} = (${2:params}) => {", "    ${3}", "};", ""],
+    "description": "Creates a named function in ES7 syntax"
+  },
+
+  "destructingObject": {
+    "prefix": "dob",
+    "body": "const { ${1:propertyName} } = ${2:objectToDestruct};",
+    "description": "Creates and assigns a local variable using object destructing"
+  },
+
+  "destructingArray": {
+    "prefix": "dar",
+    "body": "const [${1:propertyName}] = ${2:arrayToDestruct};",
+    "description": "Creates and assigns a local variable using array destructing"
+  },
+  "setInterval": {
+    "prefix": "sti",
+    "body": ["setInterval(() => {", "    ${2}", "}, ${0:intervalInms})", ""],
+    "description": "Executes the given function at specified intervals in ES7 syntax"
+  },
+  "setTimeOut": {
+    "prefix": "sto",
+    "body": ["setTimeout(() => {", "    ${2}", "}, ${1:delayInms});", ""],
+    "description": "Executes the given function after the specified delay in ES7 syntax"
+  },
+  
+  "consoleLog": {
+    "prefix": "clg",
+    "body": "console.log(${1:object});",
+    "description": "Displays a message in the console"
+  },
+  
+  "import React": {
+    "prefix": "imr",
+    "body": ["import React from 'react';", ""]
+  },
+  "import React, { Component }": {
+    "prefix": "imrc",
+    "body": ["import React, { Component } from 'react';", ""]
+  },
+  "componentWillMount": {
+    "prefix": "cwm",
+    "body": [
+      "componentWillMount() {",
+      "    $0",
+      "}",
+      ""
+    ],
+    "description":
+      "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "componentDidMount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "    $0", "}", ""],
+    "description":
+      "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+  },
+  "componentWillReceiveProps": {
+    "prefix": "cwr",
+    "body": ["componentWillReceiveProps(nextProps) {", "    $0", "}", ""],
+    "description":
+      "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "shouldComponentUpdate": {
+    "prefix": "scu",
+    "body": ["shouldComponentUpdate(nextProps, nextState) {", "    $0", "}", ""],
+    "description": "Invoked before rendering when new props or state are being received. "
+  },
+  "componentWillUpdate": {
+    "prefix": "cwup",
+    "body": ["componentWillUpdate(nextProps, nextState) {", "    $0", "}", ""],
+    "description":
+      "Invoked immediately before rendering when new props or state are being received."
+  },
+  "componentDidUpdate": {
+    "prefix": "cdup",
+    "body": ["componentDidUpdate(prevProps, prevState) {", "    $0", "}", ""],
+    "description": "Invoked immediately after the component's updates are flushed to the DOM."
+  },
+  "componentWillUnmount": {
+    "prefix": "cwun",
+    "body": ["componentWillUnmount() {", "    $0", "}", ""],
+    "description": "Invoked immediately before a component is unmounted from the DOM."
+  },
+  
+  "componentSetStateObject": {
+    "prefix": "sst",
+    "body": "this.setState({$0});",
+    "description": "Performs a shallow merge of nextState into current state"
+  },
+}
