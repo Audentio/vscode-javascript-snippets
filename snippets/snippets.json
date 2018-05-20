@@ -161,5 +161,5 @@
     "prefix": "sst",
     "body": "this.setState({$0});",
     "description": "Performs a shallow merge of nextState into current state"
-  },
+  }
 }
