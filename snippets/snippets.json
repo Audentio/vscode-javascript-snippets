@@ -21,7 +21,7 @@
     "body": [
       "import React, { Component } from 'react';",
       "",
-      "export default class ${1:componentName} extends Component<any> {",
+      "export class ${1:componentName} extends Component<any, any> {",
       "    render() {",
       "        return (",
       "            <${2:div}>",
@@ -35,31 +35,22 @@
     "description": "Creates a React component class with ES7 module system"
   },
 
-  "typedReactClassCompoment": {
-    "prefix": "trcc",
+
+  "reactFunctionalExportComponent": {
+    "prefix": "rcf",
     "body": [
-      "import React, { Component } from 'react';",
+      "import React from 'react';",
       "",
-      "interface ${1:componentName}Props {",
-      "    ${2}",
-      "}",
-      "export default class ${1:componentName} extends Component<${1:componentName}Props> {",
-      "    render() {",
-      "        return (",
-      "            <${3:div}>",
-      "                $0",
-      "            </${3:div}>",
-      "        );",
-      "    }",
+      "export const ${1:componentName} = () => {",
+      "    return (",
+      "        <div>",
+      "            $0",
+      "        </div>",
+      "    )",
       "}",
       ""
     ],
-    "description": "Creates a React component class with prop type definition"
-  },
-
-  "exportDefault": {
-    "prefix": "exp",
-    "body": "export default $1;$0"
+    "description": "Creates a React Functional Component with ES7 module system"
   },
   "exportDestructing": {
     "prefix": "exd",
@@ -183,5 +174,42 @@
     "prefix": "sst",
     "body": "this.setState({$0});",
     "description": "Performs a shallow merge of nextState into current state"
+  },
+
+  "componentSetStateFunc": {
+    "prefix": "ssf",
+    "body": ["this.setState(state => ({ $0 }));", ""],
+    "description": "Performs a shallow merge of nextState into current state"
+  },
+
+  "gqlQuery": {
+    "prefix": "gqq",
+    "body": [
+      "const gql_$1 = gql`",
+      "    query $1 {",
+      "        $2",
+      "    }",
+      "`;"
+    ]
+  },
+  "gqlMutation": {
+    "prefix": "gqm",
+    "body": [
+      "const gql_$1 = gql`",
+      "    mutation $1 {",
+      "        $2",
+      "    }",
+      "`;"
+    ]
+  },
+  "gqlFragment": {
+    "prefix": "gqf",
+    "body": [
+      "const gql_$1Frag = gql`",
+      "    fragment $1Frag on $2 {",
+      "        $3",
+      "    }",
+      "`;"
+    ]
   }
 }
