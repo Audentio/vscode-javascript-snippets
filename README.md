@@ -1,5 +1,7 @@
 # JavaScript snippets
 
+Go to Extensions -> Search for "audentio.audentio-javascript-snippets" and install
+
 ### General
 
 |  Prefix | Method                                              |
